@@ -4,12 +4,12 @@ const DrumPad = (props) => {
 
     const handleClick = () => {
         props.setNotePlayed(props.name)
+        new Audio(props.sound).play()
     }
 
     return (
         <div>
             <button className="pad"
-                    id={props.note}
                     onClick={handleClick}
             >
                 <h1>{props.note}</h1>

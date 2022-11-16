@@ -4,16 +4,16 @@ import DrumPad from "./DrumPad";
 const Machine = () => {
     const [notePlayed, setNotePlayed] = useState("")
 
-    const pianoSounds = [
-        {note: "Q", keyCode: "81", name: "Heater 1", color: "orange", sound: ""},
-        {note: "W", keyCode: "87", name: "Heater 2", color: "orange", sound: ""},
-        {note: "E", keyCode: "69", name: "Heater 3", color: "orange", sound: ""},
-        {note: "A", keyCode: "65", name: "Heater 4", color: "yellow", sound: ""},
-        {note: "S", keyCode: "83", name: "Clap", color: "yellow", sound: ""},
-        {note: "D", keyCode: "78", name: "Open-HH", color: "turquoise", sound: ""},
-        {note: "Z", keyCode: "90", name: "Kick-n'-Hat", color: "red", sound: ""},
-        {note: "X", keyCode: "88", name: "Kick", color: "yellow", sound: ""},
-        {note: "C", keyCode: "67", name: "Closed-HH", color: "lightblue", sound: ""},
+    const heaterKick = [
+        {note: "Q", keyCode: "81", name: "Heater 1", sound: "https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"},
+        {note: "W", keyCode: "87", name: "Heater 2", sound: "https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"},
+        {note: "E", keyCode: "69", name: "Heater 3",sound: "https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"},
+        {note: "A", keyCode: "65", name: "Heater 4",sound: "https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3"},
+        {note: "S", keyCode: "83", name: "Clap", sound: "https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3"},
+        {note: "D", keyCode: "78", name: "Open-HH", sound: "https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3"},
+        {note: "Z", keyCode: "90", name: "Kick-n'-Hat", sound: "https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3"},
+        {note: "X", keyCode: "88", name: "Kick", sound: "https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3"},
+        {note: "C", keyCode: "67", name: "Closed-HH", sound: "https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"},
     ]
 
 
@@ -21,11 +21,11 @@ const Machine = () => {
         <div className="machine-wrapper">
             <div className="pads-wrapper">
                 {
-                    pianoSounds.map((sound) => <DrumPad
+                    heaterKick.map((sound) => <DrumPad
                         name={sound.name}
-                        key={sound.note}
+                        key={sound.keyCode}
                         note={sound.note}
-                        color={sound.color}
+                        sound={sound.sound}
                         setNotePlayed={setNotePlayed}
                     />
                 )}
