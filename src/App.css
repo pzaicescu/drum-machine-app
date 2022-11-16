@@ -1,0 +1,55 @@
+@import url(https://fonts.googleapis.com/css2?family=Russo+One&display=swap);
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+body {
+    margin: 0;
+    font-family: Russo One, serif;
+}
+
+.machine-wrapper {
+    outline: 5px solid orange;
+    width: 660px;
+    height: auto;
+    text-align: center;
+    background-color: #b3b3b3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.machine-wrapper h3 {
+    width: 200px;
+    background-color: gray;
+    margin: 15px auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.pads-wrapper {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.pad{
+    background-color: grey;
+    box-shadow: black 3px 3px 5px;
+    width: 100px;
+    height: 80px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.pad h1 {
+    text-align: center;
+    font-family: Russo One, serif;
+}
