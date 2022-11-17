@@ -95,8 +95,12 @@ body {
     transition: .4s;
 }
 
+.kit{
+    background-color: purple;
+}
+
 input:checked + .slider {
-    background-color: #2196F3;
+    background-color: orange;
 }
 
 input:focus + .slider {
@@ -114,4 +118,9 @@ input:checked + .slider:before {
 .on-off-wrapper h5 {
     margin: 25px 0 5px 0;
     width: 60px;
+}
+
+.controls-wrapper > div {
+    display: flex;
+    justify-content: space-evenly;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 const OnOffSwitch = (props) => {
 
-    const handleChangOnOff = (e) => {
+    const handleToggleOnOff = (e) => {
         if (e.target.checked) {
             props.setPower(true)
         } else {
@@ -14,7 +14,7 @@ const OnOffSwitch = (props) => {
         <div className="on-off-wrapper">
             <h5>OFF / ON</h5>
             <label className="switch">
-                <input type="checkbox" defaultChecked={props.power} onChange={handleChangOnOff}/>
+                <input type="checkbox" defaultChecked={props.power} onChange={handleToggleOnOff}/>
                     <div className="slider"></div>
             </label>
         </div>
