@@ -1,8 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Russo+One&display=swap);
 
-* {
-    transition: all 0.1s ease-in
-}
 #root {
     display: flex;
     justify-content: center;
@@ -23,7 +20,7 @@ body {
     background-color: #b3b3b3;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .machine-wrapper h3 {
@@ -59,4 +56,8 @@ body {
 
 .pad:active {
     background-color: orange;
+}
+
+.volume-control-wrapper h5 {
+    margin: 0;
 }

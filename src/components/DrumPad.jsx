@@ -1,11 +1,17 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 const DrumPad = (props) => {
+    const audioPlayed = new Audio(props.sound)
 
     const handleClick = () => {
         props.setNotePlayed(props.name)
-        new Audio(props.sound).play()
+        props.setAudio(audioPlayed)
+        audioPlayed.play()
     }
+
+    useEffect(()=> {
+        audioPlayed.volume = props.volumeValue
+    })
 
     return (
         <div>

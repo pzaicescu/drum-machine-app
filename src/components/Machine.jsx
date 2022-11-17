@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 import DrumPad from "./DrumPad";
+import VolumeControl from "./VolumeControl";
 
 const Machine = () => {
     const [notePlayed, setNotePlayed] = useState("")
+    const [audio, setAudio] = useState()
+    const [volumeValue, setVolumeValue] = useState(0.5)
 
     const heaterKick = [
         {note: "Q", keyCode: "81", name: "Heater 1", sound: "https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"},
@@ -26,11 +29,19 @@ const Machine = () => {
                         key={sound.keyCode}
                         note={sound.note}
                         sound={sound.sound}
+                        volumeValue={volumeValue}
                         setNotePlayed={setNotePlayed}
+                        setAudio={setAudio}
                     />
                 )}
             </div>
-            <h3>{notePlayed}</h3>
+            <div className="controls-wrapper">
+                <h3>{notePlayed}</h3>
+                <VolumeControl
+                    audio={audio}
+                    setVolumeValue={setVolumeValue}
+                />
+            </div>
         </div>
     );
 };
