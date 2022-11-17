@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import DrumPad from "./DrumPad";
 import VolumeControl from "./VolumeControl";
+import OnOffSwitch from "./OnOffSwitch";
 
 const Machine = () => {
     const [notePlayed, setNotePlayed] = useState("")
     const [audio, setAudio] = useState()
-    const [volumeValue, setVolumeValue] = useState(0.5)
+    const [volumeValue, setVolumeValue] = useState(0.3)
+    const [power, setPower] = useState(true)
 
     const heaterKick = [
         {note: "Q", keyCode: "81", name: "Heater 1", sound: "https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"},
@@ -27,8 +29,10 @@ const Machine = () => {
                     heaterKick.map((sound) => <DrumPad
                         name={sound.name}
                         key={sound.keyCode}
+                        id={sound.keyCode}
                         note={sound.note}
                         sound={sound.sound}
+                        power={power}
                         volumeValue={volumeValue}
                         setNotePlayed={setNotePlayed}
                         setAudio={setAudio}
@@ -39,8 +43,16 @@ const Machine = () => {
                 <h3>{notePlayed}</h3>
                 <VolumeControl
                     audio={audio}
+                    volumeValue={volumeValue}
+                    power={power}
                     setVolumeValue={setVolumeValue}
                 />
+                <div>
+                    <OnOffSwitch
+                        power={power}
+                        setPower={setPower}
+                    />
+                </div>
             </div>
         </div>
     );
